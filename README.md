@@ -4,6 +4,11 @@ A premium, glassmorphism-styled educational and benchmarking dashboard built wit
 
 🔗 **[View Repository on GitHub](https://github.com/Suraj2105-1/ParallelGrid)**
 
+front end :https://parallel-grid-frontend.onrender.com/
+back end  :https://parallel-grid-backend.onrender.com/
+
+
+
 ### 🌟 Core Features
 
 **1. Quantum Circuit Simulator**
