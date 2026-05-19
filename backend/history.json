@@ -1,0 +1,135 @@
+[
+  {
+    "id": "run_1779097559429_z8fo3iem2",
+    "timestamp": "2026-05-18T09:45:59.429Z",
+    "title": "Run: Amdahl's Speedup Curve (03:15:06 PM)",
+    "type": "amdahls_law",
+    "params": {
+      "parallelFraction": 0.85,
+      "maxCores": 64,
+      "baseTime": 120
+    },
+    "results": {
+      "summary": "Simulated parallel speedup with parallel fraction P = 85.0%.",
+      "idealSpeedup": 64,
+      "amdahlSpeedup": 6.12,
+      "gustafsonSpeedup": 54.55,
+      "efficiencyPercent": 9.57,
+      "charts": {
+        "amdahlPoints": [
+          {
+            "cores": 1,
+            "speedup": 1,
+            "timeSec": 120
+          },
+          {
+            "cores": 2,
+            "speedup": 1.74,
+            "timeSec": 69
+          },
+          {
+            "cores": 4,
+            "speedup": 2.76,
+            "timeSec": 43.5
+          },
+          {
+            "cores": 8,
+            "speedup": 3.9,
+            "timeSec": 30.75
+          },
+          {
+            "cores": 16,
+            "speedup": 4.92,
+            "timeSec": 24.38
+          },
+          {
+            "cores": 32,
+            "speedup": 5.66,
+            "timeSec": 21.19
+          },
+          {
+            "cores": 64,
+            "speedup": 6.12,
+            "timeSec": 19.59
+          }
+        ],
+        "gustafsonPoints": [
+          {
+            "cores": 1,
+            "speedup": 1
+          },
+          {
+            "cores": 2,
+            "speedup": 1.85
+          },
+          {
+            "cores": 4,
+            "speedup": 3.55
+          },
+          {
+            "cores": 8,
+            "speedup": 6.95
+          },
+          {
+            "cores": 16,
+            "speedup": 13.75
+          },
+          {
+            "cores": 32,
+            "speedup": 27.35
+          },
+          {
+            "cores": 64,
+            "speedup": 54.55
+          }
+        ],
+        "efficiencyPoints": [
+          {
+            "cores": 1,
+            "efficiencyPercent": 100
+          },
+          {
+            "cores": 2,
+            "efficiencyPercent": 86.96
+          },
+          {
+            "cores": 4,
+            "efficiencyPercent": 68.97
+          },
+          {
+            "cores": 8,
+            "efficiencyPercent": 48.78
+          },
+          {
+            "cores": 16,
+            "efficiencyPercent": 30.77
+          },
+          {
+            "cores": 32,
+            "efficiencyPercent": 17.7
+          },
+          {
+            "cores": 64,
+            "efficiencyPercent": 9.57
+          }
+        ]
+      }
+    },
+    "notes": "Amdahl Run - High Parallelism"
+  },
+  {
+    "id": "run_1779102792849_zvy1rahnm",
+    "timestamp": "2026-05-18T11:13:12.849Z",
+    "title": "Test Run via CLI",
+    "type": "amdahls_law",
+    "params": {
+      "parallelFraction": 0.9,
+      "maxCores": 16
+    },
+    "results": {
+      "summary": "Test successful",
+      "amdahlSpeedup": 5.5
+    },
+    "notes": "CLI testing notes"
+  }
+]

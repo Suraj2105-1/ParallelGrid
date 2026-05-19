@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --bg-dark: #0a0c10;
+  --bg-card: rgba(16, 20, 28, 0.65);
+  --bg-card-active: rgba(24, 30, 42, 0.85);
+  --bg-sidebar: rgba(11, 14, 20, 0.95);
+  
+  --primary: #00f2fe;
+  --primary-glow: rgba(0, 242, 254, 0.3);
+  --secondary: #9d4edd;
+  --secondary-glow: rgba(157, 78, 221, 0.3);
+  --accent: #ff007f;
+  --accent-glow: rgba(255, 0, 127, 0.3);
+  
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --border: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(0, 242, 254, 0.35);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, monospace;
+  
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="white"] {
+  --bg-dark: #f0f4f8;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-active: rgba(240, 244, 248, 0.95);
+  --bg-sidebar: rgba(255, 255, 255, 0.98);
+  
+  --primary: #0284c7;
+  --primary-glow: rgba(2, 132, 199, 0.3);
+  --secondary: #7c3aed;
+  --secondary-glow: rgba(124, 58, 237, 0.3);
+  --accent: #ea580c;
+  --accent-glow: rgba(234, 88, 12, 0.3);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  --border: rgba(0, 0, 0, 0.1);
+  --border-active: rgba(2, 132, 199, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="amber"] {
+  --bg-dark: #1a1300;
+  --bg-card: rgba(30, 20, 5, 0.65);
+  --bg-card-active: rgba(45, 30, 10, 0.85);
+  --bg-sidebar: rgba(25, 15, 5, 0.95);
+  
+  --primary: #f59e0b;
+  --primary-glow: rgba(245, 158, 11, 0.3);
+  --secondary: #d97706;
+  --secondary-glow: rgba(217, 119, 6, 0.3);
+  --accent: #fbbf24;
+  --accent-glow: rgba(251, 191, 36, 0.3);
+  
+  --text-primary: #fffbeb;
+  --text-secondary: #fcd34d;
+  --text-muted: #b45309;
+  
+  --border: rgba(245, 158, 11, 0.15);
+  --border-active: rgba(245, 158, 11, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(245, 158, 11, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(157, 78, 221, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-glow);
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* Core headings and buttons styling reset */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 8px var(--primary-glow);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* Tooltip and utility classes */
+.glow-text {
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.glow-purple {
+  text-shadow: 0 0 10px var(--secondary-glow);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px var(--primary-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary-glow);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--primary-glow);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1.5s linear infinite;
+}
+
+.slide-in {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
