@@ -29,8 +29,8 @@ import './App.css';
 import BlochSphere from './components/BlochSphere';
 import { simulateQuantumCircuit } from './utils/quantumEngine';
 
-const API_BASE = 'http://localhost:5000/api';
-const QUANTUM_API_BASE = 'http://localhost:5001/api/quantum';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api';
+const QUANTUM_API_BASE = import.meta.env.VITE_QUANTUM_API_BASE || 'http://localhost:5001/api/quantum';
 
 // Toolbox 1 Gate Specifications
 const quantumToolbox1 = [

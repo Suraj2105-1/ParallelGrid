@@ -1,0 +1,22 @@
+services:
+  # 1. Backend Node.js Express Server
+  - type: web
+    name: parallel-grid-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  # 2. Frontend React/Vite Static Site
+  - type: web
+    name: parallel-grid-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE
+        value: https://parallel-grid-backend.onrender.com/api
